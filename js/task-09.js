@@ -13,10 +13,13 @@ const buttonEl = document.querySelector('.change-color');
 const spanEl = document.querySelector('.color');
 
 buttonEl.addEventListener('click', () => {
-  bodyEl.style.backgroundColor = getRandomHexColor();
-  spanEl.textContent = bodyEl.style.backgroundColor;
+  spanEl.textContent = getRandomHexColor();
+  bodyEl.style.backgroundColor = spanEl.textContent;
+  
 });
 
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-};
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
+}

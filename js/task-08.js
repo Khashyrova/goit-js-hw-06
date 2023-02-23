@@ -32,6 +32,6 @@ function checktForm(event) {
     if (email.value === '' || password.value === '') {
         alert('Bсі поля повинні бути заповнені!');
         return;
-    } console.log([`Email: ${email.value}, Password: ${password.value}`]);
+    } console.log({Email: email.value, Password: password.value});
     event.currentTarget.reset();
 };
